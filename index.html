@@ -724,7 +724,7 @@ footer p{font-size:0.63rem;color:var(--muted);font-family:'Space Mono',monospace
       <div style="margin-top:14px" id="mode-ekonomi"></div>
       <div class="kpi-grid" id="kpi-ekonomi"></div>
       <div class="section-label">Tren PDRB & Pertumbuhan</div>
-      <div class="chart-grid chart-grid-3">
+      <div class="chart-grid chart-grid-2">
         <div class="chart-card"><div class="chart-title">PDRB ADHK & ADHB (Milyar Rp)</div><canvas id="chartPDRB"></canvas></div>
         <div class="chart-card"><div class="chart-title">Laju Pertumbuhan & Inflasi (%)</div><canvas id="chartGrowth"></canvas></div>
       </div>
@@ -1529,10 +1529,10 @@ function rKetenagakerjaan(){
   renderKPIs('kpi-ketenagakerjaan',[{sec:'ketenagakerjaan',key:'tpak',label:'TPAK (%)',icon:'💼',accent:'var(--green)'},{sec:'ketenagakerjaan',key:'tpt',label:'TPT (%)',icon:'🔴',accent:'var(--red)'}]);
   const lbl=getLabels(),tv=getVals('ketenagakerjaan','tpt');
   if(isSingle()){
-    mkBar('chartTPT',['TPT (%)'],[{label:'%',data:[tv[0]],backgroundColor:[tv[0]>8?'rgba(239,68,68,0.8)':tv[0]>6?'rgba(249,115,22,0.7)':'rgba(34,197,94,0.7)'],borderRadius:8}],null,true);
+    mkLine('chartTPT',['TPT (%)'],[{label:'TPT (%)',data:[tv[0]],borderColor:'#ef4444',backgroundColor:'rgba(239,68,68,0.12)',fill:true,tension:0.4,pointRadius:6,pointBackgroundColor:'#ef4444'}]);
     mkBar('chartTPAK',['TPAK (%)'],[{label:'%',data:[getVals('ketenagakerjaan','tpak')[0]],backgroundColor:['rgba(34,197,94,0.7)'],borderRadius:8}],null,true);
   }else{
-    mkBar('chartTPT',lbl,[{label:'TPT (%)',data:tv,backgroundColor:tv.map(v=>v===null?'transparent':v>8?'rgba(239,68,68,0.8)':v>6?'rgba(249,115,22,0.7)':'rgba(34,197,94,0.7)'),borderRadius:5}],null,true);
+    mkLine('chartTPT',lbl,[{label:'TPT (%)',data:tv,borderColor:'#ef4444',backgroundColor:'rgba(239,68,68,0.12)',fill:true,tension:0.4,pointRadius:4,pointBackgroundColor:tv.map(v=>v===null?'transparent':v>8?'#ef4444':v>6?'#f97316':'#22c55e'),spanGaps:true}]);
     mkLine('chartTPAK',lbl,[{label:'TPAK (%)',data:getVals('ketenagakerjaan','tpak'),borderColor:'#22c55e',backgroundColor:'rgba(34,197,94,0.11)',fill:true,tension:0.4,pointRadius:4,spanGaps:true}]);
   }
 }

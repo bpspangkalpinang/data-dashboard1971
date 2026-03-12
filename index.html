@@ -58,13 +58,29 @@ header p{font-size:0.63rem;color:var(--muted);font-family:'Space Mono',monospace
 /* ── YEAR BAR ── */
 .year-bar{background:var(--panel);border-bottom:1px solid var(--border);padding:9px 28px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
 .year-bar-label{font-size:0.62rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.07em;white-space:nowrap;}
-.year-dropdown-wrap{position:relative;display:inline-flex;align-items:center;}
-.dd-icon{position:absolute;left:10px;top:50%;transform:translateY(-50%);font-size:13px;pointer-events:none;}
-.year-select{appearance:none;-webkit-appearance:none;background:var(--panel2);border:1px solid rgba(0,229,195,0.35);border-radius:9px;color:var(--teal);font-family:'Sora',sans-serif;font-size:0.78rem;font-weight:700;padding:7px 30px 7px 30px;cursor:pointer;outline:none;min-width:200px;transition:border-color 0.18s,box-shadow 0.18s;}
-.year-select:hover,.year-select:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(0,229,195,0.1);}
-.year-select option{background:#111827;color:var(--text);}
-.year-select optgroup{color:var(--muted);font-size:0.68rem;}
-.dd-arrow{position:absolute;right:9px;top:50%;transform:translateY(-50%);pointer-events:none;color:var(--teal);font-size:9px;}
+.ypicker-wrap{position:relative;display:inline-flex;align-items:center;}
+.ypicker-btn{display:inline-flex;align-items:center;gap:7px;background:var(--panel2);border:1px solid rgba(0,229,195,0.35);border-radius:9px;color:var(--teal);font-family:'Sora',sans-serif;font-size:0.78rem;font-weight:700;padding:7px 13px;cursor:pointer;outline:none;min-width:210px;transition:border-color 0.18s,box-shadow 0.18s;user-select:none;}
+.ypicker-btn:hover,.ypicker-btn.open{border-color:var(--teal);box-shadow:0 0 0 3px rgba(0,229,195,0.1);}
+.ypicker-label{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.ypicker-arrow{font-size:9px;flex-shrink:0;transition:transform 0.2s;}
+.ypicker-btn.open .ypicker-arrow{transform:rotate(180deg);}
+.ypicker-dropdown{display:none;position:absolute;top:calc(100% + 6px);left:0;z-index:500;background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:10px;min-width:300px;box-shadow:0 16px 48px rgba(0,0,0,0.5);}
+.ypicker-dropdown.show{display:block;}
+[data-theme="light"] .ypicker-dropdown{box-shadow:0 8px 30px rgba(0,0,0,0.15);}
+.ypicker-actions{display:flex;gap:5px;margin-bottom:9px;padding-bottom:9px;border-bottom:1px solid var(--border);}
+.ypicker-act{flex:1;padding:5px 8px;border-radius:7px;border:1px solid var(--border);background:none;color:var(--muted);font-family:'Sora',sans-serif;font-size:0.64rem;font-weight:600;cursor:pointer;transition:all 0.15s;}
+.ypicker-act:hover{border-color:var(--teal);color:var(--teal);background:rgba(0,229,195,0.07);}
+.ypicker-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;margin-bottom:8px;}
+.ychk{display:none;}
+.ychk-lbl{display:flex;align-items:center;justify-content:center;padding:6px 4px;border-radius:7px;border:1px solid var(--border);background:var(--panel2);font-family:'Space Mono',monospace;font-size:0.69rem;font-weight:700;color:var(--muted);cursor:pointer;transition:all 0.15s;}
+.ychk-lbl:hover{border-color:rgba(0,229,195,0.4);color:var(--teal);background:rgba(0,229,195,0.07);}
+.ychk:checked+.ychk-lbl{border-color:var(--teal);color:var(--teal);background:rgba(0,229,195,0.14);box-shadow:0 0 0 1px rgba(0,229,195,0.25);}
+[data-theme="light"] .ychk-lbl{background:#f8fafc;}
+[data-theme="light"] .ychk:checked+.ychk-lbl{background:rgba(0,180,155,0.1);}
+.ypicker-footer{display:flex;align-items:center;justify-content:space-between;gap:8px;border-top:1px solid var(--border);padding-top:9px;}
+.ypicker-count{font-size:0.62rem;color:var(--muted);font-family:'Space Mono',monospace;}
+.ypicker-apply{padding:7px 18px;border-radius:8px;border:none;background:var(--teal);color:#06080f;font-family:'Sora',sans-serif;font-size:0.75rem;font-weight:700;cursor:pointer;transition:opacity 0.15s;}
+.ypicker-apply:hover{opacity:0.85;}
 .year-range-badge{display:flex;align-items:center;gap:5px;background:rgba(0,229,195,0.07);border:1px solid rgba(0,229,195,0.15);border-radius:7px;padding:5px 10px;font-size:0.67rem;font-family:'Space Mono',monospace;color:var(--muted);}
 .year-range-badge strong{color:var(--teal);}
 .quick-btns{display:flex;gap:5px;margin-left:auto;}
@@ -156,8 +172,7 @@ table.etable tr:hover td{background:rgba(255,255,255,0.02);}
 [data-theme="light"] .admin-sidebar{background:#fff;border-color:rgba(0,0,0,0.08);}
 [data-theme="light"] .snav-item:hover{background:rgba(0,0,0,0.04);}
 [data-theme="light"] .snav-item.active{background:rgba(79,70,229,0.08);}
-[data-theme="light"] .year-select{background:#fff;border-color:rgba(0,180,155,0.4);color:#00b89e;}
-[data-theme="light"] .year-select option{background:#fff;color:#1e293b;}
+
 [data-theme="light"] .mode-toggle{background:rgba(0,0,0,0.04);}
 [data-theme="light"] .mode-btn:hover:not(.active){background:rgba(0,0,0,0.06);color:#1e293b;}
 [data-theme="light"] .top-banner#offlineBanner{background:rgba(217,119,6,0.08);border-color:rgba(217,119,6,0.2);}
@@ -697,10 +712,23 @@ footer p{font-size:0.63rem;color:var(--muted);font-family:'Space Mono',monospace
 <div id="view-dashboard">
   <div class="year-bar">
     <span class="year-bar-label">📅 Pilih Tahun</span>
-    <div class="year-dropdown-wrap">
-      <span class="dd-icon">📅</span>
-      <select class="year-select" id="yearSelect" onchange="onYearSelect(this.value)"></select>
-      <span class="dd-arrow">▼</span>
+    <div class="ypicker-wrap" id="ypickerWrap">
+      <div class="ypicker-btn" id="ypickerBtn" onclick="toggleYPicker()">
+        <span>📅</span>
+        <span class="ypicker-label" id="ypickerLabel">Semua Tahun</span>
+        <span class="ypicker-arrow">▼</span>
+      </div>
+      <div class="ypicker-dropdown" id="ypickerDropdown">
+        <div class="ypicker-actions">
+          <button class="ypicker-act" onclick="ypickAll()">✓ Pilih Semua</button>
+          <button class="ypicker-act" onclick="ypickNone()" style="color:var(--red);border-color:rgba(239,68,68,0.3);" onmouseover="this.style.background='rgba(239,68,68,0.07)'" onmouseout="this.style.background='none'">✕ Kosongkan</button>
+        </div>
+        <div class="ypicker-grid" id="ypickerGrid"></div>
+        <div class="ypicker-footer">
+          <span class="ypicker-count" id="ypickerCount">0 tahun dipilih</span>
+          <button class="ypicker-apply" onclick="applyYPicker()">Terapkan →</button>
+        </div>
+      </div>
     </div>
     <div class="year-range-badge">Menampilkan: <strong id="yearRangeText">—</strong></div>
     <div class="quick-btns">
@@ -1337,11 +1365,45 @@ function swSec(id,btn){
 // YEAR MANAGEMENT
 // ══════════════════════════════════════
 function buildYearDropdown(){
-  const sel=document.getElementById('yearSelect');
-  sel.innerHTML=`<option value="all">Semua Tahun (${YEARS[0]}–${YEARS[YEARS.length-1]})</option>`;
-  const grp=document.createElement('optgroup'); grp.label='── Tahun Tunggal ──';
-  YEARS.forEach(y=>{const o=document.createElement('option');o.value=y;o.textContent='Tahun '+y;grp.appendChild(o);});
-  sel.appendChild(grp);
+  const grid=document.getElementById('ypickerGrid'); if(!grid) return;
+  grid.innerHTML=YEARS.map(y=>`<div><input type="checkbox" class="ychk" id="ychk${y}" value="${y}" onchange="onYchkChange()"><label class="ychk-lbl" for="ychk${y}">${y}</label></div>`).join('');
+  YEARS.forEach(y=>{ const cb=document.getElementById('ychk'+y); if(cb) cb.checked=selectedYears.includes(y); });
+  updateYPickerUI();
+}
+function onYchkChange(){ updateYPickerUI(); document.querySelectorAll('.qbtn').forEach(b=>b.classList.remove('qactive')); }
+function updateYPickerUI(){
+  const checked=getCheckedYears();
+  const el=document.getElementById('ypickerCount');
+  if(el) el.textContent=checked.length===0?'⚠️ Pilih minimal 1 tahun':checked.length+' tahun dipilih';
+  const lbl=document.getElementById('ypickerLabel'); if(!lbl) return;
+  if(checked.length===0){lbl.textContent='— Pilih tahun —';return;}
+  if(checked.length===YEARS.length){lbl.textContent='Semua Tahun';return;}
+  if(checked.length===1){lbl.textContent='Tahun '+checked[0];return;}
+  const s=[...checked].sort((a,b)=>a-b);
+  const cont=s.every((y,i)=>i===0||y===s[i-1]+1);
+  if(cont) lbl.textContent=s[0]+' – '+s[s.length-1];
+  else if(s.length<=4) lbl.textContent=s.join(', ');
+  else lbl.textContent=s.length+' tahun dipilih';
+}
+function getCheckedYears(){ return YEARS.filter(y=>{ const cb=document.getElementById('ychk'+y); return cb&&cb.checked; }); }
+function toggleYPicker(){
+  const dd=document.getElementById('ypickerDropdown'),btn=document.getElementById('ypickerBtn');
+  const open=dd.classList.contains('show');
+  dd.classList.toggle('show',!open); btn.classList.toggle('open',!open);
+}
+function ypickAll(){ YEARS.forEach(y=>{ const cb=document.getElementById('ychk'+y); if(cb) cb.checked=true; }); updateYPickerUI(); document.querySelectorAll('.qbtn').forEach(b=>b.classList.remove('qactive')); }
+function ypickNone(){ YEARS.forEach(y=>{ const cb=document.getElementById('ychk'+y); if(cb) cb.checked=false; }); updateYPickerUI(); document.querySelectorAll('.qbtn').forEach(b=>b.classList.remove('qactive')); }
+function applyYPicker(){
+  const checked=getCheckedYears().sort((a,b)=>a-b);
+  if(checked.length===0){alert('Pilih minimal 1 tahun!');return;}
+  selectedYears=checked;
+  const rt=document.getElementById('yearRangeText');
+  if(rt) rt.textContent=selectedYears.length===1?String(selectedYears[0]):selectedYears[0]+' – '+selectedYears[selectedYears.length-1];
+  document.getElementById('ypickerDropdown').classList.remove('show');
+  document.getElementById('ypickerBtn').classList.remove('open');
+  document.querySelectorAll('.qbtn').forEach(b=>b.classList.remove('qactive'));
+  if(selectedYears.length===YEARS.length) document.getElementById('qbtnAll').classList.add('qactive');
+  renderAllCharts();
 }
 function addYear(){
   const inp=document.getElementById('newYearInput'); const y=parseInt(inp.value);
@@ -1387,10 +1449,19 @@ function updateYearUI(){
   // sync selectedYears
   selectedYears=selectedYears.filter(y=>YEARS.includes(y));
   if(selectedYears.length===0) selectedYears=[...YEARS];
-  if(selectedYears.length>0)
-    document.getElementById('yearRangeText').textContent=
-      selectedYears.length===1?String(selectedYears[0]):`${selectedYears[0]} – ${selectedYears[selectedYears.length-1]}`;
+  YEARS.forEach(y=>{ const cb=document.getElementById('ychk'+y); if(cb) cb.checked=selectedYears.includes(y); });
+  updateYPickerUI();
+  const rt=document.getElementById('yearRangeText');
+  if(rt) rt.textContent=selectedYears.length===1?String(selectedYears[0]):selectedYears[0]+' – '+selectedYears[selectedYears.length-1];
 }
+// Close picker on outside click
+document.addEventListener('click',function(e){
+  const wrap=document.getElementById('ypickerWrap');
+  if(wrap&&!wrap.contains(e.target)){
+    document.getElementById('ypickerDropdown').classList.remove('show');
+    document.getElementById('ypickerBtn').classList.remove('open');
+  }
+});
 function rebuildAll(){
   selectedYears=[...YEARS];
   updateYearUI();
@@ -1398,22 +1469,20 @@ function rebuildAll(){
   document.getElementById('qbtnAll').classList.add('qactive');
   renderAllCharts();
 }
-function onYearSelect(val){
-  document.querySelectorAll('.qbtn').forEach(b=>b.classList.remove('qactive'));
-  if(val==='all'){selectedYears=[...YEARS];document.getElementById('yearRangeText').textContent=`${YEARS[0]} – ${YEARS[YEARS.length-1]}`;document.getElementById('qbtnAll').classList.add('qactive');}
-  else{selectedYears=[parseInt(val)];document.getElementById('yearRangeText').textContent=val;}
-  renderAllCharts();
-}
+function onYearSelect(val){}
 function quickRange(n,btn){
   const r=YEARS.slice(-n); selectedYears=r;
-  document.getElementById('yearSelect').value='all';
-  document.getElementById('yearRangeText').textContent=`${r[0]} – ${r[r.length-1]}`;
+  YEARS.forEach(y=>{ const cb=document.getElementById('ychk'+y); if(cb) cb.checked=r.includes(y); });
+  updateYPickerUI();
+  const rt=document.getElementById('yearRangeText'); if(rt) rt.textContent=r[0]+' – '+r[r.length-1];
   document.querySelectorAll('.qbtn').forEach(b=>b.classList.remove('qactive')); btn.classList.add('qactive');
   renderAllCharts();
 }
 function quickAll(btn){
-  selectedYears=[...YEARS]; document.getElementById('yearSelect').value='all';
-  document.getElementById('yearRangeText').textContent=`${YEARS[0]} – ${YEARS[YEARS.length-1]}`;
+  selectedYears=[...YEARS];
+  YEARS.forEach(y=>{ const cb=document.getElementById('ychk'+y); if(cb) cb.checked=true; });
+  updateYPickerUI();
+  const rt=document.getElementById('yearRangeText'); if(rt) rt.textContent=YEARS[0]+' – '+YEARS[YEARS.length-1];
   document.querySelectorAll('.qbtn').forEach(b=>b.classList.remove('qactive')); btn.classList.add('qactive');
   renderAllCharts();
 }
@@ -1571,12 +1640,18 @@ function rDistribusi(){
     document.getElementById('pie-year-label').textContent='(Terbaru)';
     document.getElementById('bar-year-label').textContent='(Terbaru)';
     document.getElementById('kpi-distribusi').innerHTML='';
+    // Cari index terbaru yang punya data distribusi (untuk pie & top5)
     const li=YEARS.reduceRight((f,y,i)=>f!==-1?f:SK.some(k=>D('distribusi',k)[i]!==null)?i:-1,-1);
+    // Cari index terbaru yang punya data laju (terpisah, karena bisa beda tahun)
+    const liLaju=YEARS.reduceRight((f,y,i)=>f!==-1?f:SK.some(k=>D('laju',k)[i]!==null&&D('laju',k)[i]!==undefined)?i:-1,-1);
+    const latestY=liLaju>=0?YEARS[liLaju]:(li>=0?YEARS[li]:null);
+    if(latestY) document.getElementById('bar-year-label').textContent=`(${latestY})`;
     const pd=SK.map(k=>li>=0?D('distribusi',k)[li]??0:0);
-    const ld=SK.map(k=>li>=0?D('laju',k)[li]??null:null);
+    const ld=SK.map(k=>liLaju>=0?D('laju',k)[liLaju]??null:null);
     mkDough('chartPie',SL,pd,SC);
     mkLine('chartTop5',lbl,[{label:'Perdagangan',data:getVals('distribusi','perdagangan'),borderColor:'#ec4899',fill:false,tension:0.4,pointRadius:3},{label:'Industri',data:getVals('distribusi','industri'),borderColor:'#4f8ef7',fill:false,tension:0.4,pointRadius:3},{label:'Konstruksi',data:getVals('distribusi','konstruksi'),borderColor:'#f97316',fill:false,tension:0.4,pointRadius:3},{label:'Adm Pemerint',data:getVals('distribusi','adm_pemerint'),borderColor:'#ef4444',fill:false,tension:0.4,pointRadius:3},{label:'Transportasi',data:getVals('distribusi','transportasi'),borderColor:'#a855f7',fill:false,tension:0.4,pointRadius:3}]);
-    mkBar('chartSectorGrowth',SL,[{label:'Laju Terbaru (%)',data:ld,backgroundColor:ld.map(v=>v===null?'transparent':v<0?'rgba(239,68,68,0.8)':v>8?'rgba(34,197,94,0.85)':'rgba(79,142,247,0.7)'),borderRadius:5}],xt,true);
+    const ldColors=ld.map(v=>v===null?'transparent':v<0?'rgba(239,68,68,0.8)':v>8?'rgba(34,197,94,0.85)':'rgba(79,142,247,0.7)');
+    mkBar('chartSectorGrowth',SL,[{label:'Laju Terbaru (%)',data:ld,backgroundColor:ldColors,borderRadius:5}],xt,true);
   }
 }
 

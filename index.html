@@ -429,8 +429,8 @@ footer p{font-size:0.63rem;color:var(--muted);font-family:'Space Mono',monospace
 </div>
 
 <div class="stats-bar fade-up d2">
-  <div class="stat-item"><div class="stat-num">12</div><div class="stat-lbl">Tahun Data</div></div>
-  <div class="stat-item"><div class="stat-num">50+</div><div class="stat-lbl">Indikator</div></div>
+  <div class="stat-item"><div class="stat-num" id="landing-stat-tahun">12</div><div class="stat-lbl">Tahun Data</div></div>
+  <div class="stat-item"><div class="stat-num" id="landing-stat-indikator">50+</div><div class="stat-lbl">Indikator</div></div>
   <div class="stat-item"><div class="stat-num">6</div><div class="stat-lbl">Kategori</div></div>
   <div class="stat-item"><div class="stat-num">16</div><div class="stat-lbl">Sektor Ekonomi</div></div>
 </div>
@@ -447,27 +447,26 @@ footer p{font-size:0.63rem;color:var(--muted);font-family:'Space Mono',monospace
         <span class="group-title" style="color:#00e5c3">📈 Ekonomi & PDRB</span>
         <span class="group-arrow" style="color:#00e5c3">→</span>
       </div>
-      <div class="mini-grid">
-        
+      <div class="mini-grid" id="landing-mini-ekonomi">
         <div class="mini-kpi">
           <div class="mini-label">PDRB ADHK (Milyar Rp)</div>
-          <div class="mini-value" style="color:#00e5c3">10.503,91</div>
-          <div class="mini-year">2024</div>
+          <div class="mini-value" style="color:#00e5c3" id="lkv-ekonomi-pdrb_adhk">—</div>
+          <div class="mini-year" id="lky-ekonomi-pdrb_adhk">—</div>
         </div>
         <div class="mini-kpi">
           <div class="mini-label">PDRB ADHB (Milyar Rp)</div>
-          <div class="mini-value" style="color:#00e5c3">18.939,59</div>
-          <div class="mini-year">2024</div>
+          <div class="mini-value" style="color:#00e5c3" id="lkv-ekonomi-pdrb_adhb">—</div>
+          <div class="mini-year" id="lky-ekonomi-pdrb_adhb">—</div>
         </div>
         <div class="mini-kpi">
           <div class="mini-label">Laju Pertumbuhan (%)</div>
-          <div class="mini-value" style="color:#00e5c3">-2,30</div>
-          <div class="mini-year">2024</div>
+          <div class="mini-value" style="color:#00e5c3" id="lkv-ekonomi-pertumbuhan">—</div>
+          <div class="mini-year" id="lky-ekonomi-pertumbuhan">—</div>
         </div>
         <div class="mini-kpi">
           <div class="mini-label">Inflasi Tahunan (%)</div>
-          <div class="mini-value" style="color:#00e5c3">2,58</div>
-          <div class="mini-year">2025</div>
+          <div class="mini-value" style="color:#00e5c3" id="lkv-ekonomi-inflasi">—</div>
+          <div class="mini-year" id="lky-ekonomi-inflasi">—</div>
         </div>
       </div>
     </div></div>
@@ -477,32 +476,31 @@ footer p{font-size:0.63rem;color:var(--muted);font-family:'Space Mono',monospace
         <span class="group-title" style="color:#4f8ef7">🎓 Pendidikan</span>
         <span class="group-arrow" style="color:#4f8ef7">→</span>
       </div>
-      <div class="mini-grid">
-        
+      <div class="mini-grid" id="landing-mini-pendidikan">
         <div class="mini-kpi">
           <div class="mini-label">Melek Huruf (%)</div>
-          <div class="mini-value" style="color:#4f8ef7">98,91</div>
-          <div class="mini-year">2025</div>
+          <div class="mini-value" style="color:#4f8ef7" id="lkv-pendidikan-melek_huruf">—</div>
+          <div class="mini-year" id="lky-pendidikan-melek_huruf">—</div>
         </div>
         <div class="mini-kpi">
           <div class="mini-label">Lama Sekolah (Thn)</div>
-          <div class="mini-value" style="color:#4f8ef7">10,90</div>
-          <div class="mini-year">2025</div>
+          <div class="mini-value" style="color:#4f8ef7" id="lkv-pendidikan-lama_sekolah">—</div>
+          <div class="mini-year" id="lky-pendidikan-lama_sekolah">—</div>
         </div>
         <div class="mini-kpi">
           <div class="mini-label">APM SD/MI (%)</div>
-          <div class="mini-value" style="color:#4f8ef7">94,12</div>
-          <div class="mini-year">2025</div>
+          <div class="mini-value" style="color:#4f8ef7" id="lkv-pendidikan-apm_sd">—</div>
+          <div class="mini-year" id="lky-pendidikan-apm_sd">—</div>
         </div>
         <div class="mini-kpi">
           <div class="mini-label">APM SMP/MTs (%)</div>
-          <div class="mini-value" style="color:#4f8ef7">83,25</div>
-          <div class="mini-year">2025</div>
+          <div class="mini-value" style="color:#4f8ef7" id="lkv-pendidikan-apm_smp">—</div>
+          <div class="mini-year" id="lky-pendidikan-apm_smp">—</div>
         </div>
         <div class="mini-kpi">
           <div class="mini-label">APM SMA (%)</div>
-          <div class="mini-value" style="color:#4f8ef7">71,94</div>
-          <div class="mini-year">2025</div>
+          <div class="mini-value" style="color:#4f8ef7" id="lkv-pendidikan-apm_sma">—</div>
+          <div class="mini-year" id="lky-pendidikan-apm_sma">—</div>
         </div>
       </div>
     </div></div>
@@ -512,32 +510,31 @@ footer p{font-size:0.63rem;color:var(--muted);font-family:'Space Mono',monospace
         <span class="group-title" style="color:#a855f7">👥 Demografi</span>
         <span class="group-arrow" style="color:#a855f7">→</span>
       </div>
-      <div class="mini-grid">
-        
+      <div class="mini-grid" id="landing-mini-demografi">
         <div class="mini-kpi">
           <div class="mini-label">Jumlah Penduduk (Jiwa)</div>
-          <div class="mini-value" style="color:#a855f7">233.466</div>
-          <div class="mini-year">2025</div>
+          <div class="mini-value" style="color:#a855f7" id="lkv-demografi-jumlah_penduduk">—</div>
+          <div class="mini-year" id="lky-demografi-jumlah_penduduk">—</div>
         </div>
         <div class="mini-kpi">
           <div class="mini-label">Kepadatan (Jiwa/Km²)</div>
-          <div class="mini-value" style="color:#a855f7">2.233</div>
-          <div class="mini-year">2025</div>
+          <div class="mini-value" style="color:#a855f7" id="lkv-demografi-kepadatan">—</div>
+          <div class="mini-year" id="lky-demografi-kepadatan">—</div>
         </div>
         <div class="mini-kpi">
           <div class="mini-label">Laju Pertumbuhan (%)</div>
-          <div class="mini-value" style="color:#a855f7">1,31</div>
-          <div class="mini-year">2025</div>
+          <div class="mini-value" style="color:#a855f7" id="lkv-demografi-laju_penduduk">—</div>
+          <div class="mini-year" id="lky-demografi-laju_penduduk">—</div>
         </div>
         <div class="mini-kpi">
           <div class="mini-label">Angka Ketergantungan</div>
-          <div class="mini-value" style="color:#a855f7">46,12</div>
-          <div class="mini-year">2025</div>
+          <div class="mini-value" style="color:#a855f7" id="lkv-demografi-ketergantungan">—</div>
+          <div class="mini-year" id="lky-demografi-ketergantungan">—</div>
         </div>
         <div class="mini-kpi">
           <div class="mini-label">Penduduk Lansia (Jiwa)</div>
-          <div class="mini-value" style="color:#a855f7">16.097</div>
-          <div class="mini-year">2025</div>
+          <div class="mini-value" style="color:#a855f7" id="lkv-demografi-lansia">—</div>
+          <div class="mini-year" id="lky-demografi-lansia">—</div>
         </div>
       </div>
     </div></div>
@@ -547,17 +544,16 @@ footer p{font-size:0.63rem;color:var(--muted);font-family:'Space Mono',monospace
         <span class="group-title" style="color:#ef4444">💼 Ketenagakerjaan</span>
         <span class="group-arrow" style="color:#ef4444">→</span>
       </div>
-      <div class="mini-grid">
-        
+      <div class="mini-grid" id="landing-mini-ketenagakerjaan">
         <div class="mini-kpi">
           <div class="mini-label">TPAK (%)</div>
-          <div class="mini-value" style="color:#ef4444">67,10</div>
-          <div class="mini-year">2025</div>
+          <div class="mini-value" style="color:#ef4444" id="lkv-ketenagakerjaan-tpak">—</div>
+          <div class="mini-year" id="lky-ketenagakerjaan-tpak">—</div>
         </div>
         <div class="mini-kpi">
           <div class="mini-label">TPT (%)</div>
-          <div class="mini-value" style="color:#ef4444">5,73</div>
-          <div class="mini-year">2025</div>
+          <div class="mini-value" style="color:#ef4444" id="lkv-ketenagakerjaan-tpt">—</div>
+          <div class="mini-year" id="lky-ketenagakerjaan-tpt">—</div>
         </div>
       </div>
     </div></div>
@@ -567,32 +563,31 @@ footer p{font-size:0.63rem;color:var(--muted);font-family:'Space Mono',monospace
         <span class="group-title" style="color:#fbbf24">📊 Kemiskinan & Sosial</span>
         <span class="group-arrow" style="color:#fbbf24">→</span>
       </div>
-      <div class="mini-grid">
-        
+      <div class="mini-grid" id="landing-mini-kemiskinan">
         <div class="mini-kpi">
           <div class="mini-label">% Penduduk Miskin (P0)</div>
-          <div class="mini-value" style="color:#fbbf24">4,50</div>
-          <div class="mini-year">2025</div>
+          <div class="mini-value" style="color:#fbbf24" id="lkv-kemiskinan-p0">—</div>
+          <div class="mini-year" id="lky-kemiskinan-p0">—</div>
         </div>
         <div class="mini-kpi">
           <div class="mini-label">Garis Kemiskinan (Rp)</div>
-          <div class="mini-value" style="color:#fbbf24">956</div>
-          <div class="mini-year">2025</div>
+          <div class="mini-value" style="color:#fbbf24" id="lkv-kemiskinan-garis_kemiskinan">—</div>
+          <div class="mini-year" id="lky-kemiskinan-garis_kemiskinan">—</div>
         </div>
         <div class="mini-kpi">
           <div class="mini-label">Indeks Kedalaman (P1)</div>
-          <div class="mini-value" style="color:#fbbf24">0,64</div>
-          <div class="mini-year">2025</div>
+          <div class="mini-value" style="color:#fbbf24" id="lkv-kemiskinan-p1">—</div>
+          <div class="mini-year" id="lky-kemiskinan-p1">—</div>
         </div>
         <div class="mini-kpi">
           <div class="mini-label">Indeks Keparahan (P2)</div>
-          <div class="mini-value" style="color:#fbbf24">0,13</div>
-          <div class="mini-year">2025</div>
+          <div class="mini-value" style="color:#fbbf24" id="lkv-kemiskinan-p2">—</div>
+          <div class="mini-year" id="lky-kemiskinan-p2">—</div>
         </div>
         <div class="mini-kpi">
           <div class="mini-label">Angka Kriminalitas</div>
-          <div class="mini-value" style="color:#fbbf24">585</div>
-          <div class="mini-year">2024</div>
+          <div class="mini-value" style="color:#fbbf24" id="lkv-kemiskinan-kriminalitas">—</div>
+          <div class="mini-year" id="lky-kemiskinan-kriminalitas">—</div>
         </div>
       </div>
     </div></div>
@@ -602,13 +597,13 @@ footer p{font-size:0.63rem;color:var(--muted);font-family:'Space Mono',monospace
         <span class="group-title" style="color:#22c55e">🧩 Distribusi PDRB Sektoral</span>
         <span class="group-arrow" style="color:#22c55e">→</span>
       </div>
-      <div class="mini-grid">
-        <div class="mini-kpi"><div class="mini-label">Perdagangan (%)</div><div class="mini-value" style="color:#22c55e">25,79</div><div class="mini-year">2024</div></div>
-        <div class="mini-kpi"><div class="mini-label">Industri (%)</div><div class="mini-value" style="color:#22c55e">13,43</div><div class="mini-year">2024</div></div>
-        <div class="mini-kpi"><div class="mini-label">Konstruksi (%)</div><div class="mini-value" style="color:#22c55e">11,09</div><div class="mini-year">2024</div></div>
-        <div class="mini-kpi"><div class="mini-label">Transportasi (%)</div><div class="mini-value" style="color:#22c55e">7,51</div><div class="mini-year">2024</div></div>
-        <div class="mini-kpi"><div class="mini-label">Jasa Pendidikan (%)</div><div class="mini-value" style="color:#22c55e">6,04</div><div class="mini-year">2024</div></div>
-        <div class="mini-kpi"><div class="mini-label">Adm. Pemerintahan (%)</div><div class="mini-value" style="color:#22c55e">6,36</div><div class="mini-year">2024</div></div>
+      <div class="mini-grid" id="landing-mini-distribusi">
+        <div class="mini-kpi"><div class="mini-label">Perdagangan (%)</div><div class="mini-value" style="color:#22c55e" id="lkv-distribusi-perdagangan">—</div><div class="mini-year" id="lky-distribusi-perdagangan">—</div></div>
+        <div class="mini-kpi"><div class="mini-label">Industri (%)</div><div class="mini-value" style="color:#22c55e" id="lkv-distribusi-industri">—</div><div class="mini-year" id="lky-distribusi-industri">—</div></div>
+        <div class="mini-kpi"><div class="mini-label">Konstruksi (%)</div><div class="mini-value" style="color:#22c55e" id="lkv-distribusi-konstruksi">—</div><div class="mini-year" id="lky-distribusi-konstruksi">—</div></div>
+        <div class="mini-kpi"><div class="mini-label">Transportasi (%)</div><div class="mini-value" style="color:#22c55e" id="lkv-distribusi-transportasi">—</div><div class="mini-year" id="lky-distribusi-transportasi">—</div></div>
+        <div class="mini-kpi"><div class="mini-label">Jasa Pendidikan (%)</div><div class="mini-value" style="color:#22c55e" id="lkv-distribusi-jasa_pend">—</div><div class="mini-year" id="lky-distribusi-jasa_pend">—</div></div>
+        <div class="mini-kpi"><div class="mini-label">Adm. Pemerintahan (%)</div><div class="mini-value" style="color:#22c55e" id="lkv-distribusi-adm_pemerint">—</div><div class="mini-year" id="lky-distribusi-adm_pemerint">—</div></div>
       </div>
       <div style="padding:6px 14px 12px;font-size:0.62rem;color:#22c55e;opacity:0.7;font-weight:600;">+10 sektor lainnya →</div>
     </div></div>
@@ -619,31 +614,31 @@ footer p{font-size:0.63rem;color:var(--muted);font-family:'Space Mono',monospace
         <span class="group-title" style="color:#6366f1">🌟 IPM & Dimensi Pembentuk</span>
         <span class="group-arrow" style="color:#6366f1">→</span>
       </div>
-      <div class="mini-grid">
+      <div class="mini-grid" id="landing-mini-ipm">
         <div class="mini-kpi">
           <div class="mini-label">IPM</div>
-          <div class="mini-value" style="color:#6366f1">79,80</div>
-          <div class="mini-year">2024</div>
+          <div class="mini-value" style="color:#6366f1" id="lkv-ipm-ipm">—</div>
+          <div class="mini-year" id="lky-ipm-ipm">—</div>
         </div>
         <div class="mini-kpi">
           <div class="mini-label">AHH (thn)</div>
-          <div class="mini-value" style="color:#6366f1">70,25</div>
-          <div class="mini-year">2024</div>
+          <div class="mini-value" style="color:#6366f1" id="lkv-ipm-ahh">—</div>
+          <div class="mini-year" id="lky-ipm-ahh">—</div>
         </div>
         <div class="mini-kpi">
           <div class="mini-label">HLS (thn)</div>
-          <div class="mini-value" style="color:#6366f1">14,40</div>
-          <div class="mini-year">2024</div>
+          <div class="mini-value" style="color:#6366f1" id="lkv-ipm-hls">—</div>
+          <div class="mini-year" id="lky-ipm-hls">—</div>
         </div>
         <div class="mini-kpi">
           <div class="mini-label">RLS (thn)</div>
-          <div class="mini-value" style="color:#6366f1">10,67</div>
-          <div class="mini-year">2024</div>
+          <div class="mini-value" style="color:#6366f1" id="lkv-ipm-rls">—</div>
+          <div class="mini-year" id="lky-ipm-rls">—</div>
         </div>
         <div class="mini-kpi">
           <div class="mini-label">Pengeluaran/Kapita</div>
-          <div class="mini-value" style="color:#6366f1">16,12 jt</div>
-          <div class="mini-year">2024</div>
+          <div class="mini-value" style="color:#6366f1" id="lkv-ipm-pengeluaran">—</div>
+          <div class="mini-year" id="lky-ipm-pengeluaran">—</div>
         </div>
       </div>
     </div></div>
@@ -1107,6 +1102,7 @@ async function loadDB(){
   // Tampilkan data dari cache/default DULU agar UI langsung responsif
   loadFromCache();
   showLoading(false);
+  updateLandingKPIs(); // ← isi landing page dari cache/default
 
   // Jika Firebase tidak siap, selesai di sini
   if(!firebaseReady){ return; }
@@ -1146,6 +1142,7 @@ async function syncFromFirebase(){
     buildYearDropdown();
     updateYearUI();
     renderAllCharts();
+    updateLandingKPIs(); // ← perbarui landing page dengan data terbaru dari Firebase
     console.log('✅ Data berhasil disinkron dari Firestore');
   } catch(e){
     console.warn('Gagal sync dari Firestore:', e.message);
@@ -1173,6 +1170,7 @@ async function saveDB(){
     const t=new Date().toLocaleTimeString('id-ID',{hour:'2-digit',minute:'2-digit'});
     document.getElementById('statLastSave').textContent=t+' (lokal)';
     changeCount=0; updateChgBadge(); rebuildAll();
+    updateLandingKPIs(); // ← perbarui landing page (offline)
     toast('Tersimpan lokal (Firebase tidak terhubung)','success');
     return;
   }
@@ -1197,6 +1195,7 @@ async function saveDB(){
     const t=new Date().toLocaleTimeString('id-ID',{hour:'2-digit',minute:'2-digit'});
     document.getElementById('statLastSave').textContent=t;
     changeCount=0; updateChgBadge(); rebuildAll();
+    updateLandingKPIs(); // ← perbarui landing page setelah simpan
     toast('Data tersimpan ke cloud ☁️','success');
   } catch(e){
     console.error('Gagal simpan ke Firestore:', e);
@@ -1236,6 +1235,7 @@ async function resetData(){
     }
     cacheLocally();
     changeCount=0; updateChgBadge(); rebuildAll(); renderAllAdminTables();
+    updateLandingKPIs(); // ← perbarui landing page setelah reset
     toast('Data direset ke default','success');
   });
 }
@@ -1468,6 +1468,7 @@ function rebuildAll(){
   document.querySelectorAll('.qbtn').forEach(b=>b.classList.remove('qactive'));
   document.getElementById('qbtnAll').classList.add('qactive');
   renderAllCharts();
+  updateLandingKPIs();
 }
 function onYearSelect(val){}
 function quickRange(n,btn){
@@ -2249,6 +2250,102 @@ function loadPanduanFromStorage(){
 window.addEventListener('beforeunload',e=>{
   if(changeCount>0){e.preventDefault();e.returnValue='Ada perubahan yang belum disimpan!';}
 });
+
+// ══════════════════════════════════════
+// LANDING PAGE — UPDATE KPI DINAMIS
+// ══════════════════════════════════════
+function fmtLanding(v, unit) {
+  if (v === null || v === undefined) return '—';
+  if (unit === 'Rp' && v > 1000) return (v / 1000).toFixed(0) + 'K';
+  if (Math.abs(v) >= 1000000) return (v / 1000000).toFixed(2).replace(/\.?0+$/, '') + ' jt';
+  if (Math.abs(v) >= 10000) return v.toLocaleString('id-ID');
+  const str = (+v).toFixed(2).replace(/\.?0+$/, '');
+  return str.replace('.', ',');
+}
+
+function getLatestLandingVal(sec, key) {
+  const arr = (db[sec]?.[key] || DD[sec]?.[key] || []);
+  for (let i = YEARS.length - 1; i >= 0; i--) {
+    if (arr[i] !== null && arr[i] !== undefined) {
+      return { v: arr[i], y: YEARS[i] };
+    }
+  }
+  return { v: null, y: null };
+}
+
+function updateLandingKPIs() {
+  const items = [
+    // Ekonomi
+    { sec:'ekonomi', key:'pdrb_adhk', unit:'' },
+    { sec:'ekonomi', key:'pdrb_adhb', unit:'' },
+    { sec:'ekonomi', key:'pertumbuhan', unit:'' },
+    { sec:'ekonomi', key:'inflasi', unit:'' },
+    // Pendidikan
+    { sec:'pendidikan', key:'melek_huruf', unit:'' },
+    { sec:'pendidikan', key:'lama_sekolah', unit:'' },
+    { sec:'pendidikan', key:'apm_sd', unit:'' },
+    { sec:'pendidikan', key:'apm_smp', unit:'' },
+    { sec:'pendidikan', key:'apm_sma', unit:'' },
+    // Demografi
+    { sec:'demografi', key:'jumlah_penduduk', unit:'' },
+    { sec:'demografi', key:'kepadatan', unit:'' },
+    { sec:'demografi', key:'laju_penduduk', unit:'' },
+    { sec:'demografi', key:'ketergantungan', unit:'' },
+    { sec:'demografi', key:'lansia', unit:'' },
+    // Ketenagakerjaan
+    { sec:'ketenagakerjaan', key:'tpak', unit:'' },
+    { sec:'ketenagakerjaan', key:'tpt', unit:'' },
+    // Kemiskinan
+    { sec:'kemiskinan', key:'p0', unit:'' },
+    { sec:'kemiskinan', key:'garis_kemiskinan', unit:'Rp' },
+    { sec:'kemiskinan', key:'p1', unit:'' },
+    { sec:'kemiskinan', key:'p2', unit:'' },
+    { sec:'kemiskinan', key:'kriminalitas', unit:'' },
+    // Distribusi
+    { sec:'distribusi', key:'perdagangan', unit:'' },
+    { sec:'distribusi', key:'industri', unit:'' },
+    { sec:'distribusi', key:'konstruksi', unit:'' },
+    { sec:'distribusi', key:'transportasi', unit:'' },
+    { sec:'distribusi', key:'jasa_pend', unit:'' },
+    { sec:'distribusi', key:'adm_pemerint', unit:'' },
+    // IPM
+    { sec:'ipm', key:'ipm', unit:'' },
+    { sec:'ipm', key:'ahh', unit:'' },
+    { sec:'ipm', key:'hls', unit:'' },
+    { sec:'ipm', key:'rls', unit:'' },
+    { sec:'ipm', key:'pengeluaran', unit:'jt' },
+  ];
+
+  items.forEach(({ sec, key, unit }) => {
+    const { v, y } = getLatestLandingVal(sec, key);
+    const elV = document.getElementById('lkv-' + sec + '-' + key);
+    const elY = document.getElementById('lky-' + sec + '-' + key);
+    if (elV) {
+      const formatted = fmtLanding(v, unit);
+      if (elV.textContent !== formatted) {
+        elV.style.transition = 'opacity 0.35s ease';
+        elV.style.opacity = '0.3';
+        setTimeout(() => {
+          elV.textContent = formatted;
+          elV.style.opacity = '1';
+        }, 150);
+      }
+    }
+    if (elY) elY.textContent = y ? String(y) : '—';
+  });
+
+  // Update stats bar — jumlah tahun dari YEARS
+  const elThn = document.getElementById('landing-stat-tahun');
+  if (elThn && typeof YEARS !== 'undefined') elThn.textContent = YEARS.length;
+
+  // Hitung total indikator dari SCHEMA
+  if (typeof SCHEMA !== 'undefined') {
+    const total = Object.values(SCHEMA).reduce((acc, s) => acc + (s.fields ? s.fields.length : 0), 0);
+    const elInd = document.getElementById('landing-stat-indikator');
+    if (elInd && total > 0) elInd.textContent = total + '+';
+  }
+}
+
 </script>
 
 </div>
